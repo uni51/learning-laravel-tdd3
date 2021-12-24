@@ -4,25 +4,21 @@ namespace App\Models;
 
 class VacancyLevel
 {
-    private $remaininCount;
+    private $remainingCount;
 
-    public function __construct(int $remaininCount)
+    public function __construct(int $remainingCount)
     {
-        $this->remaininCount = $remaininCount;
+        $this->remainingCount = $remainingCount;
     }
 
     public function mark(): string
     {
-       if ($this->remaininCount === 0) {
+       if ($this->remainingCount === 0) {
           return '×';
        }
-
-        if ($this->remaininCount === 4) {
+        if ($this->remainingCount < 5) {
             return '△';
         }
-
-        if ($this->remaininCount === 5) {
-            return '◎';
-        }
+        return '◎';
     }
 }

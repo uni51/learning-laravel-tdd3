@@ -18,6 +18,9 @@ class VacancyLevelTest extends TestCase
         $this->assertSame($expectedMark, $level->mark());
     }
 
+    /**
+     * @return array[]
+     */
     public function dataMark()
     {
         return [
